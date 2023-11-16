@@ -1,12 +1,13 @@
+const { CONNREFUSED } = require("dns");
 const fs = require("fs/promises");
 const path = require("path");
 
 const contactsPath = path.join(__dirname,"/db/contacts.json");
 console.log(contactsPath);
 
-// TODO: задокументировать каждую функцию
-function listContacts() {
-    // ...твой код. Возвращает массив контактов.
+async function listContacts() {
+  const contacts = await fs.readFile(contactsPath);
+  return JSON.parse(contacts);
   }
   
   function getContactById(contactId) {
@@ -19,4 +20,11 @@ function listContacts() {
   
   function addContact(name, email, phone) {
     // ...твой код. Возвращает объект добавленного контакта. 
-  }
+  };
+
+async function test() {
+  const list = await listContacts();
+  console.log(list);
+}
+  
+test();
