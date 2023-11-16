@@ -22,9 +22,10 @@ async function listContacts() {
     // ...твой код. Возвращает объект добавленного контакта. 
   };
 
-async function test() {
+// test
+async function testListContacts() {
   const list = await listContacts();
   console.log(list);
 }
   
-test();
+testListContacts();
