@@ -16,9 +16,13 @@ async function listContacts() {
     return contact || null;
   }
   
-  function removeContact(contactId) {
-    // ...твой код. Возвращает объект удаленного контакта. Возвращает null,
-    // если объект с таким id не найден.
+  async function removeContact(contactId) {
+    const contacts = await listContacts();
+    const index = contacts.findIndex((contact) => contact.id === contactId)
+    if(index === -1) return null;
+  const [removeContact] = contacts.splice(index, 1);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  return removeContact;
   }
   
   async function addContact(name, email, phone) {
@@ -50,9 +54,17 @@ async function listContacts() {
 // testGetContactById();
 
 //{ "name": "Vasyl", "email": "Vasyl@magnis.org","phone": "(000) 123-4567"}
- async function testAddContact() {
-  const list = await addContact("Vasyl", "Vasyl@magnis.org","(000) 123-4567");
+//  async function testAddContact() {
+//   const list = await addContact("Vasyl", "Vasyl@magnis.org","(000) 123-4567");
+//   console.log(list);
+// }
+  
+// testAddContact();
+
+//mwvq9WVIkAEOIuxA9X4_F
+ async function testRemoveContact() {
+  const list = await removeContact("mwvq9WVIkAEOIuxA9X4_F");
   console.log(list);
 }
   
-testAddContact();
+testRemoveContact();
