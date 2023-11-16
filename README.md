@@ -1,7 +1,5 @@
 # goit-node-hw-01
 
-## HW01 for the course Node.js
-
 ### Receive and display the entire list of contacts in the form of a table (console.table)
 node index.js --action list
 ![Screenshoot-1](./resources/screen1.JPG)
@@ -11,7 +9,7 @@ node index.js --action get --id 05olLMgyVQdWRwgKfg5J6
 ### Add a contact and display the created contact in the console
 node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
 ![Screenshoot-3](./resources/screen3.JPG)
-# Delete the contact and display the deleted contact or null in the console if a contact with this id does not exist.
+### Delete the contact and display the deleted contact or null in the console if a contact with this id does not exist.
 ![Screenshoot-3](./resources/screen4.JPG)
 
 
