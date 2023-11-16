@@ -38,33 +38,10 @@ async function listContacts() {
     return newContact;
   };
 
-// test
-// async function testListContacts() {
-//   const list = await listContacts();
-//   console.log(list);
-// }
-  
-// testListContacts();
 
-//  async function testGetContactById() {
-//   const list = await getContactById('05olLMgyVQdWRwgKfg5J6');
-//   console.log(list);
-// }
-  
-// testGetContactById();
-
-//{ "name": "Vasyl", "email": "Vasyl@magnis.org","phone": "(000) 123-4567"}
-//  async function testAddContact() {
-//   const list = await addContact("Vasyl", "Vasyl@magnis.org","(000) 123-4567");
-//   console.log(list);
-// }
-  
-// testAddContact();
-
-//mwvq9WVIkAEOIuxA9X4_F
- async function testRemoveContact() {
-  const list = await removeContact("mwvq9WVIkAEOIuxA9X4_F");
-  console.log(list);
-}
-  
-testRemoveContact();
+  module.exports = {
+    listContacts,
+    getContactById,
+    removeContact,
+    addContact
+  }
