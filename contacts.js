@@ -1,4 +1,3 @@
-const { CONNREFUSED } = require("dns");
 const fs = require("fs/promises");
 const path = require("path");
 
@@ -17,7 +16,8 @@ async function listContacts() {
   }
   
   function removeContact(contactId) {
-    // ...твой код. Возвращает объект удаленного контакта. Возвращает null, если объект с таким id не найден.
+    // ...твой код. Возвращает объект удаленного контакта. Возвращает null,
+    // если объект с таким id не найден.
   }
   
   function addContact(name, email, phone) {
