@@ -10,8 +10,10 @@ async function listContacts() {
   return JSON.parse(contacts);
   }
   
-  function getContactById(contactId) {
-    // ...твой код. Возвращает объект контакта с таким id. Возвращает null, если объект с таким id не найден.
+  async function getContactById(contactId) {
+    const contacts = await listContacts();
+    const contact = contacts.find((contact) => contact.id === contactId);
+    return contact || null;
   }
   
   function removeContact(contactId) {
@@ -23,9 +25,16 @@ async function listContacts() {
   };
 
 // test
-async function testListContacts() {
-  const list = await listContacts();
+// async function testListContacts() {
+//   const list = await listContacts();
+//   console.log(list);
+// }
+  
+// testListContacts();
+
+ async function testGetContactById() {
+  const list = await getContactById('05olLMgyVQdWRwgKfg5J6');
   console.log(list);
 }
   
-testListContacts();
+testGetContactById();
