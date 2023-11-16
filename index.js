@@ -29,9 +29,9 @@ const {
 // testAddContact();
 
 //JsGjsm4ejx55R-Ne5ZVip
- async function testRemoveContact() {
-  const list = await removeContact("JsGjsm4ejx55R-Ne5ZVip");
-  console.log(list);
-}
+//  async function testRemoveContact() {
+//   const list = await removeContact("JsGjsm4ejx55R-Ne5ZVip");
+//   console.log(list);
+// }
   
-testRemoveContact();
+// testRemoveContact();
